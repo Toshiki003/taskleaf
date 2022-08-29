@@ -1,0 +1,7 @@
+h1 タスクの新規登録
+/ p Find me in app/views/tasks/new.html.slim コメントアウトの１行
+
+.nav.justify-content-end
+    = link_to '一覧', tasks_path, class: 'nav-link'
+
+= render partial: 'form', locals: { task: @task }
