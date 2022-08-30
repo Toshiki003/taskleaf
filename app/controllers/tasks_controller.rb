@@ -26,7 +26,7 @@ class TasksController < ApplicationController
   def destroy #p122
     task = Task.find(params[:id])
     task.destroy
-    redirect_to task_url, notice: "タスク「#{task.name}」を削除しました。"
+    redirect_to tasks_url, notice: "タスク「#{task.name}」を削除しました。" #tasks_url urlがpathということ（絶対パスか相対パスか）
   end
 
   
