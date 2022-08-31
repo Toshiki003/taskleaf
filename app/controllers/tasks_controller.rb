@@ -31,10 +31,13 @@ class TasksController < ApplicationController
 
   
   def create #p106登録アクションを実装する。「登録フォームから送られてきたデータをデータベースに保存して、一覧画面に遷移する」という処理
-    task = Task.new(task_params) #安全化されたtaskパラメータをtask_paramsメソッドで取得して、それを使ってTaskオブジェクトを作成します。
-    task.save! #次に、これをsave!メソッドでデータベースに保存します。
-    redirect_to tasks_url, notice: "タスク「#{task.name}」を登録しました。" #次に、redirect_toメソッドを使って一覧画面に遷移させます。
+    @task = Task.new(task_params) #安全化されたtaskパラメータをtask_paramsメソッドで取得して、それを使ってTaskオブジェクトを作成します。
     
+    if @task.save
+       redirect_to @task, notice: "タスク「#{@task.name}」を登録しました。" #次に、redirect_toメソッドを使って遷移させます。@taskに遷移＝？
+    else
+      render :new
+    end
   end
 
   private #p106より
