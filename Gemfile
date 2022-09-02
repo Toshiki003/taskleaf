@@ -64,3 +64,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'slim-rails' #slimのジェネレータを提供してくれるgem
 gem 'html2slim' #ERB形式のファイルをslim形式に変換してくれるerb2slimコマンドを提供してくれるgem
 gem 'bootstrap', '~> 4.6'
+gem 'rails_autolink'
